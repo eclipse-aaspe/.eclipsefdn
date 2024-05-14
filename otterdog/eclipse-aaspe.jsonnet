@@ -12,7 +12,8 @@ orgs.newOrg('eclipse-aaspe') {
     },
   },
   _repositories+:: [
-    orgs.newRepo('aaspe') {
+    orgs.newRepo('package-explorer') {
+      aliases: ['aaspe'],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -27,7 +28,8 @@ orgs.newOrg('eclipse-aaspe') {
         },
       ],
     },
-    orgs.newRepo('aaspe-common') {
+    orgs.newRepo('common') {
+      aliases: ['aaspe-common'],
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -38,7 +40,8 @@ orgs.newOrg('eclipse-aaspe') {
         default_workflow_permissions: "write",
       },
     },
-    orgs.newRepo('aasx-server') {
+    orgs.newRepo('server') {
+      aliases: ['aasx-server'],
       allow_rebase_merge: false,
       allow_update_branch: false,
       delete_branch_on_merge: false,
