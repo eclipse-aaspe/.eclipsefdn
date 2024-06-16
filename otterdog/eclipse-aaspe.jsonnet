@@ -12,10 +12,26 @@ orgs.newOrg('eclipse-aaspe') {
     },
   },
   _repositories+:: [
-    orgs.newRepo('package-explorer') {
-      aliases: ['aaspe'],
+    orgs.newRepo('common') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "aaspe common components",
+      has_wiki: false,
+      web_commit_signoff_required: false,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },
+    orgs.newRepo('package-explorer') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      code_scanning_default_languages+: [
+        "javascript",
+        "javascript-typescript",
+        "typescript"
+      ],
+      code_scanning_default_setup_enabled: true,
       delete_branch_on_merge: false,
       description: "AASX Package Explorer",
       web_commit_signoff_required: false,
@@ -27,18 +43,6 @@ orgs.newOrg('eclipse-aaspe') {
           value: "********",
         },
       ],
-    },
-    orgs.newRepo('common') {
-      aliases: ['aaspe-common'],
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: false,
-      description: "aaspe common components",
-      has_wiki: false,
-      web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
     },
     orgs.newRepo('server') {
       aliases: ['aasx-server'],
