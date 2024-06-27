@@ -2,7 +2,6 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipse-aaspe') {
   settings+: {
-    dependabot_security_updates_enabled_for_new_repositories: false,
     description: "C# based viewer & editor for the Asset Administration Shell",
     name: "Eclipse AASX Package Explorer and Server",
     web_commit_signoff_required: false,
